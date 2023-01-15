@@ -1,6 +1,6 @@
 import { Component, createResource, For } from "solid-js";
 
-const fetchJokes = async () => (await fetch(`https://official-joke-api.appspot.com/jokes/programming/ten`)).json();
+const fetchJokes = async () => (await fetch("https://official-joke-api.appspot.com/jokes/programming/ten")).json();
 
 type Joke = {
 	id: number,
