@@ -6,7 +6,7 @@ import App from "./App";
 
 render(
 	() => (
-		<Router>
+		<Router base="/jokes-app">
 			<App />
 		</Router>
 	),
