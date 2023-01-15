@@ -12,7 +12,6 @@ const App: Component = () => {
 	const [jokes] = createResource<Joke[]>(fetchJokes);
 	return (
 		<ul>
-			{JSON.stringify(jokes())}
 			<For each={jokes()}>
 				{(joke: Joke) =>
 					<li>{joke.id}: {joke.setup}</li>
