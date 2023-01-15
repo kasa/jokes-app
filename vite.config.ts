@@ -3,6 +3,7 @@ import eslint from "vite-plugin-eslint";
 import solidPlugin from "vite-plugin-solid";
 
 export default defineConfig({
+	base: "/jokes-app/",
 	plugins: [
 		solidPlugin(),
 		{
