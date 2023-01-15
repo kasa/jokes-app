@@ -1,25 +1,20 @@
-import { createResource, For } from "solid-js";
+import { useRouteData } from "@solidjs/router";
+import { createResource } from "solid-js";
+import { JokeList } from "../components/JokeList";
 
-const fetchJokes = async () => (await fetch("https://official-joke-api.appspot.com/jokes/programming/ten")).json();
+const fetchJokes = async () => (await fetch("https://official-joke-api.appspot.com/jokes/ten")).json();
 
-type Joke = {
-	id: number,
-	setup: string,
-	punchline: string,
+export function HomeData() {
+	const [jokes] = createResource(fetchJokes);
+	return jokes;
 }
 
 export default function Home() {
-	const [jokes] = createResource<Joke[]>(fetchJokes);
+	const jokes = useRouteData<typeof HomeData>();
 	return (
 		<>
 			<p>Jokes:</p>
-			<ul>
-				<For each={jokes()}>
-					{(joke: Joke) =>
-						<li>{joke.id}: {joke.setup}</li>
-					}
-				</For>
-			</ul>
+			<JokeList jokes={jokes()} />
 		</>
 	);
 }
