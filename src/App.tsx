@@ -1,24 +1,14 @@
-import { Component, createResource, For } from "solid-js";
+import { Route, Routes } from "@solidjs/router";
+import { lazy } from "solid-js";
 
-const fetchJokes = async () => (await fetch("https://official-joke-api.appspot.com/jokes/programming/ten")).json();
+const Home = lazy(() => import("./pages/Home"));
 
-type Joke = {
-	id: number,
-	setup: string,
-	punchline: string,
-}
-
-const App: Component = () => {
-	const [jokes] = createResource<Joke[]>(fetchJokes);
+function App() {
 	return (
-		<ul>
-			<For each={jokes()}>
-				{(joke: Joke) =>
-					<li>{joke.id}: {joke.setup}</li>
-				}
-			</For>
-		</ul >
+		<Routes>
+			<Route path="/" component={Home} />
+		</Routes>
 	);
-};
+}
 
 export default App;
