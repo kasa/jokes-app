@@ -1,11 +1,11 @@
 /* @refresh reload */
-import { Router } from "@solidjs/router";
+import { hashIntegration, Router } from "@solidjs/router";
 import { render } from "solid-js/web";
 import App from "./App";
 
 render(
 	() => (
-		<Router base="/jokes-app">
+		<Router base="/jokes-app" source={hashIntegration()}>
 			<App />
 		</Router>
 	),
