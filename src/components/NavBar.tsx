@@ -14,25 +14,19 @@ export function NavBar() {
 						<li class="nav-item">
 							<A href="/" class="nav-link" aria-current="page" end={true}>Home</A>
 						</li>
-						<For each={types}>
-							{(type) =>
-								<li class="nav-item">
-									<A href={`/jokes/${type}/ten`} class="nav-link" aria-current="page">{type}</A>
-								</li>
-							}
-						</For>
-						<li class="nav-item">
-							<div class="dropdown">
-								<a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									Dropdown link
-								</a>
-
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#">Action</a></li>
-									<li><a class="dropdown-item" href="#">Another action</a></li>
-									<li><a class="dropdown-item" href="#">Something else here</a></li>
-								</ul>
-							</div>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Joke Types
+							</a>
+							<ul class="dropdown-menu dropdown-menu-dark">
+								<For each={types}>
+									{(type) =>
+										<li>
+											<A href={`/jokes/${type}/ten`} class="dropdown-item" aria-current="page">{type}</A>
+										</li>
+									}
+								</For>
+							</ul>
 						</li>
 					</ul>
 				</div>
