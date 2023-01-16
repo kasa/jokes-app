@@ -2,6 +2,8 @@
 import { hashIntegration, Router } from "@solidjs/router";
 import { render } from "solid-js/web";
 import App from "./App";
+import "./assets/index.js";
+import "./assets/index.scss";
 
 render(
 	() => (

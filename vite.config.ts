@@ -1,9 +1,15 @@
+import path from "path";
 import { defineConfig } from "vite";
 import eslint from "vite-plugin-eslint";
 import solidPlugin from "vite-plugin-solid";
 
 export default defineConfig({
 	base: "/jokes-app/",
+	resolve: {
+		alias: {
+			"~bootstrap": path.resolve(__dirname, "node_modules/bootstrap"),
+		}
+	},
 	plugins: [
 		solidPlugin(),
 		{
