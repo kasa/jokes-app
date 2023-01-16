@@ -1,4 +1,5 @@
 import { Route, Routes } from "@solidjs/router";
+import "bootstrap";
 import "bootstrap/scss/bootstrap.scss";
 import { lazy } from "solid-js";
 import { NavBar } from "./components/NavBar.jsx";
