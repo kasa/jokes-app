@@ -1,7 +1,7 @@
 import { Route, Routes } from "@solidjs/router";
-import { Container } from "solid-bootstrap";
+import "bootstrap/scss/bootstrap.scss";
 import { lazy } from "solid-js";
-import { NavBar } from "./NavBar.jsx";
+import { NavBar } from "./components/NavBar.jsx";
 import { HomeData } from "./pages/index.js";
 import { JokeData } from "./pages/jokes/[id].data";
 import JokeC from "./pages/jokes/[id].jsx";
@@ -13,7 +13,7 @@ function App() {
 	return (
 		<>
 			<NavBar />
-			<Container>
+			<main class="container">
 				<Routes>
 					<Route path="/" component={Home} data={HomeData} />
 					<Route path="/jokes">
@@ -21,7 +21,7 @@ function App() {
 						<Route path="/:id" component={JokeC} data={JokeData} />
 					</Route>
 				</Routes>
-			</Container>
+			</main>
 		</>
 	);
 }

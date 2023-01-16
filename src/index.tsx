@@ -5,7 +5,7 @@ import App from "./App";
 
 render(
 	() => (
-		<Router base="/jokes-app" source={hashIntegration()}>
+		<Router source={hashIntegration()}>
 			<App />
 		</Router>
 	),
