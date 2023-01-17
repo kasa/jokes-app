@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build --if-present
+        run: VITE_HASH=${GITHUB_SHA} npm run build --if-present
 
       - name: PurgeCSS
         run: npm run purgecss

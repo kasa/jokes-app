@@ -9,6 +9,8 @@ import { JokeTypeC, JokeTypeData } from "./pages/jokes/[type]/index.jsx";
 const Home = lazy(() => import("./pages/index.js"));
 
 function App() {
+	const commitHash = import.meta.env.VITE_HASH;
+
 	return (
 		<>
 			<NavBar />
@@ -21,6 +23,9 @@ function App() {
 					</Route>
 				</Routes>
 			</main>
+			<footer>
+				<p>Hash: {commitHash}</p>
+			</footer>
 		</>
 	);
 }
